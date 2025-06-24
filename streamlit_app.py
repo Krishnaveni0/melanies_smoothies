@@ -31,10 +31,7 @@ pd_df.columns = pd_df.columns.str.lower()  # normalize casing
 # st.dataframe(pd_df)
 # st.stop()
 # ===
-# Prepare dropdown list and search mapping
-fruit_options = pd_df["fruit_name"].tolist()
-fruit_lookup = dict(zip(pd_df["fruit_name"], pd_df["search_on"]))
-# ====
+
 
 ingredients_list=st.multiselect(
     'Choose up to 5 ingredients:',
@@ -65,8 +62,3 @@ if ingredients_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
-
-
-
-
-
