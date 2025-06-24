@@ -364,7 +364,7 @@ if ingredients_list:
     # st.write(ingredients_string)
 # Build a SQL Insert Statement & Test It
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
-            values ('""" + ingredients_string +"""','""" + name_on_order+ """')"""
+            values ('""" + ingredients_string +"""','""" + name_on_order+ """','"""+search_on+"""')"""
     # st.write(my_insert_stmt)
     # st.stop()
     time_to_insert =st.button("Submit Order")
